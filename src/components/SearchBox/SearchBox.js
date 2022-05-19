@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBox.css";
+import { useDispatch } from "react-redux";
+import { getMoviesAction } from "../../redux-manager/movies/actions";
 
 function SearchBox() {
   const [searchLine, setSearchLine] = useState("");
@@ -9,6 +11,12 @@ function SearchBox() {
   };
   const searchBoxSubmitHandler = (e) => {
     e.preventDefault();
+  };
+
+  const dispatch = useDispatch();
+
+  const findMivie = () => {
+    dispatch(getMoviesAction(searchLine));
   };
 
   return (
@@ -25,6 +33,7 @@ function SearchBox() {
           />
         </label>
         <button
+          onClick={findMivie}
           type="submit"
           className="search-box__form-submit"
           disabled={!searchLine}
