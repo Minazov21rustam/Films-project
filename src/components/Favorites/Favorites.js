@@ -5,6 +5,7 @@ import { saveFavFilmsSelector } from "../../redux-manager/favMovies/selector";
 import {
   deleteFavMoviesAction,
   saveListAction,
+  getListAction,
 } from "../../redux-manager/favMovies/actions";
 
 import { Link, Route } from "react-router-dom";
@@ -22,9 +23,10 @@ function Favorites(props) {
 
   const buttonSaver = () => {
     setActive(true);
-    dispatch(saveListAction({ title, favMovies }));
-    console.log(title, favMovies,"hello")
+    dispatch(saveListAction({ title, movies: favMovies }));
+    dispatch(getListAction({ title, movies: favMovies }));
   };
+
   return (
     <div className="favorites">
       <input

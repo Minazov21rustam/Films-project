@@ -1,4 +1,4 @@
-import { ADD_FAV, DELETE_FAV, SAVE_LIST } from "../constants";
+import { ADD_FAV, DELETE_FAV, SAVE_LIST, GET_LIST } from "../constants";
 
 const initialValues = {
   favFilms: [],
@@ -9,6 +9,8 @@ const favReducer = (state = initialValues, action) => {
     case ADD_FAV:
       return { ...state, favFilms: [...state.favFilms, action.payload] };
     case SAVE_LIST:
+      return { ...state };
+    case GET_LIST:
       return { ...state };
     case DELETE_FAV:
       return {

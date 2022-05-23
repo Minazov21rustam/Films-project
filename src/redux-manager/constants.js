@@ -4,4 +4,5 @@ export const SET_MOVIE = "SET_MOVIE";
 export const ADD_FAV = "ADD_FAV";
 export const DELETE_FAV = "DELETE_FAV";
 export const SAVE_LIST = "SAVE_LIST";
+export const GET_LIST = "GET_LIST";
 
